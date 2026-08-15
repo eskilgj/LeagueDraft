@@ -1,0 +1,17 @@
+{
+  "name": "leaguedraft",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "license": "UNLICENSED",
+  "description": "LeagueDraft monorepo root.",
+  "devDependencies": {
+    "prettier": "^3.9.6"
+  }
+}

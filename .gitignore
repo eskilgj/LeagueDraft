@@ -1,0 +1,27 @@
+# Node
+node_modules/
+.pnpm-store/
+npm-debug.log*
+
+# Next.js
+apps/web/.next/
+apps/web/out/
+
+# WXT / extension build output
+apps/extension/.wxt/
+apps/extension/.output/
+
+# Go
+apps/native-helper/*.exe
+apps/native-helper/native-helper
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

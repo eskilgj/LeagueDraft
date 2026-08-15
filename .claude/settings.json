@@ -1,0 +1,44 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev*)",
+      "Bash(npm run build*)",
+      "Bash(npm run lint*)",
+      "Bash(npm run compile*)",
+      "Bash(npm run format*)",
+      "Bash(npm install)",
+      "Bash(npm ci)",
+      "Bash(go build*)",
+      "Bash(go vet*)",
+      "Bash(go test*)",
+      "Bash(gofmt *)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/block-secret-commits.js"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/format-file.js"
+          }
+        ]
+      }
+    ]
+  }
+}
